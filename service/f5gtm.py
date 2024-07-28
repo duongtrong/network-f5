@@ -35,7 +35,7 @@ def config_mgmt_f5system(username, password, timezone, host, device):
         hostname
         device
     """
-    url = "https://{}/mgmt/tm/cm/device/{}".format(host, device)
+    url = "https://{}/mgmt/tm/sys/ntp/{}".format(host, device)
     data = {
         "timeZone": timezone
     }

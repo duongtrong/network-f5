@@ -27,17 +27,16 @@ def get_access_token(username, password, host):
     except Exception as e:
         return {'status': 400, 'msg': str(e)}
 
-def config_mgmt_f5system(username, password, timezone, host, device):
+def config_mgmt_timeZone(username, password, timezone, host):
     """
         username
         password
         timeZone
         hostname
-        device
     """
-    url = "https://{}/mgmt/tm/sys/ntp/{}".format(host, device)
+    url = "https://{}/mgmt/tm/sys/ntp".format(host)
     data = {
-        "timeZone": timezone
+        "timezone": timezone
     }
     payload = json.dumps(data)
     try:

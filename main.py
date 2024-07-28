@@ -1,5 +1,5 @@
 from service.f5gtm import get_access_token
-from service.f5gtm import config_mgmt_f5system
+from service.f5gtm import config_mgmt_timeZone
 from service.f5gtm import save_sys_config
 import urllib3
 urllib3.disable_warnings()
@@ -27,7 +27,7 @@ def get_access_token_method():
 if __name__ == "__main__":
     result_token = get_access_token_method()
     print(result_token['token'])
-    configF5 = config_mgmt_f5system(username=username, password=password, timezone="Asia/Saigon", host=hostname, device=deviceId)
-    print(configF5)
+    timezoneResult = config_mgmt_timeZone(username=username, password=password, timezone="Asia/Saigon", host=hostname)
+    print(timezoneResult)
     # state = save_sys_config(token=result_token["token"], host=hostname)
     # print(state)

@@ -5,7 +5,7 @@ import urllib3
 urllib3.disable_warnings()
 
 username = 'admin'
-password = 'Tcb12345'
+password = 'Tcb123'
 hostname = '47.129.45.25:8443'
 deviceId = 'f5test'
 

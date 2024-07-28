@@ -27,14 +27,15 @@ def get_access_token(username, password, host):
     except Exception as e:
         return {'status': 400, 'msg': str(e)}
 
-def config_mgmt_f5system(username, password, timezone, host):
+def config_mgmt_f5system(username, password, timezone, host, device):
     """
         username
         password
         timeZone
         hostname
+        device
     """
-    url = "https://{}/mgmt/tm/cm/device/f5test".format(host)
+    url = "https://{}/mgmt/tm/cm/device/{}".format(host, device)
     data = {
         "timeZone": timezone
     }

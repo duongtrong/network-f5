@@ -6,7 +6,8 @@ urllib3.disable_warnings()
 
 username = 'admin'
 password = 'Tcb12345'
-hostname = '13.212.238.210:8443'
+hostname = '47.129.45.25:8443'
+deviceId = 'f5test'
 
 def get_access_token_method():
     try:
@@ -26,7 +27,7 @@ def get_access_token_method():
 if __name__ == "__main__":
     result_token = get_access_token_method()
     print(result_token['token'])
-    configF5 = config_mgmt_f5system(username=username, password=password, timezone="Asia/Saigon", host=hostname)
+    configF5 = config_mgmt_f5system(username=username, password=password, timezone="Asia/Saigon", host=hostname, device=deviceId)
     print(configF5)
     # state = save_sys_config(token=result_token["token"], host=hostname)
     # print(state)
